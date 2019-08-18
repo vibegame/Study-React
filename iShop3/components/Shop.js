@@ -10,10 +10,13 @@ class Shop extends React.Component {
     state = {
         idBtnDeleteDisable: null,
         idBtnEditDisable: null,
+        btnsDeleteDisable: false,
+        btnsEditDisable: false,
         goods: this.props.goods,
+        highlightEnable: true,
         highlightedProductId: undefined,
         cardProduct: undefined,
-        cardView: undefined
+        cardView: undefined,
     }
     closeCard = () => {
         this.setState(
@@ -21,7 +24,10 @@ class Shop extends React.Component {
                 idBtnDeleteDisable: null,
                 idBtnEditDisable: null,          
                 cardProduct: undefined,
-                cardView: undefined
+                cardView: undefined,
+                highlightEnable: true,
+                btnsDeleteDisable: false,
+                btnsEditDisable: false
             }
         );
     }
@@ -50,6 +56,12 @@ class Shop extends React.Component {
             idBtnDeleteDisable: id
         })
     }
+    btnsDisable = (turn) => {
+        this.setState({
+            btnsDeleteDisable: turn,
+            btnsEditDisable: turn
+        });
+    }
     cbDeleteProduct = (product) => {
         let newGoods = [];
         newGoods = this.state.goods.filter(element => {
@@ -61,6 +73,7 @@ class Shop extends React.Component {
         this.setState({goods: newGoods});
     }
     cbHighlightProductId = (id, product) => {
+        if(!this.state.highlightEnable) return;
         if(this.state.highlightedProductId == id) {
             this.setState({
                 highlightedProductId: undefined,
@@ -79,10 +92,12 @@ class Shop extends React.Component {
         this.setState({
             highlightedProductId: id,
             cardProduct: product,
-            cardView: "EDIT"
+            cardView: "EDIT",
+            highlightEnable: false
         });
         this.unHighlight();
         this.cbBtnEditDisable(id);
+        this.cbBtnDeleteDisable(id);
     }
     cbSaveProduct = (id, product) => {
         let newGoods = [],
@@ -119,6 +134,7 @@ class Shop extends React.Component {
         return id;
     }
     addProduct = () => {
+        this.btnsDisable(true);
         let newID = this.renderId(10000);
         let newProduct = {
             id: newID,
@@ -127,7 +143,8 @@ class Shop extends React.Component {
         };
         this.setState({
             cardProduct: newProduct,
-            cardView: "ADD"
+            cardView: "ADD",
+            highlightEnable: false
         });
     }
     renderProducts() {
@@ -143,6 +160,8 @@ class Shop extends React.Component {
             cbHighlightProductId = {this.cbHighlightProductId}
             highlight = {this.state.highlightedProductId == product.id}
             cbEditProduct = {this.cbEditProduct}
+            btnsDeleteDisable = {this.state.btnsDeleteDisable}
+            btnsEditDisable = {this.state.btnsEditDisable}
             />);
             products.push(element);
         });

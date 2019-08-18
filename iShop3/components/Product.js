@@ -5,12 +5,12 @@ import './Product.css';
 class Product extends React.Component {
     static propTypes = {
         product: PropTypes.object,
-        idBtnDeleteDisable: PropTypes.number,
-        idBtnEditDisable: PropTypes.number,
         cbDeleteProduct: PropTypes.func,
         cbHighlightProductId: PropTypes.func,
         highlight: PropTypes.bool,
-        cbEditProduct: PropTypes.func
+        cbEditProduct: PropTypes.func,
+        btnsEditDisable: PropTypes.bool,
+        btnsDeleteDisable: PropTypes.bool
     }
     btnDeleteClick = (event) => {
         if(!event.currentTarget.classList.contains("active")) return;
@@ -31,8 +31,8 @@ class Product extends React.Component {
             <span className="id">{this.props.product.id}</span>
             <span className="name">{this.props.product.name}</span>
             <span className="price">{this.props.product.price}</span>
-            <div onClick = {this.btnDeleteClick} className={"btn delete" + (this.props.idBtnDeleteDisable != this.props.product.id  ? " active" : "")}>Delete</div>
-            <div onClick = {this.btnEditClick} className={"btn edit" + (this.props.idBtnEditDisable != this.props.product.id ? " active" : "")}>Edit</div>
+            <div onClick = {this.btnDeleteClick} className={"btn delete" + (this.props.btnsDeleteDisable || this.props.idBtnDeleteDisable == this.props.product.id  ? "" : " active")}>Delete</div>
+            <div onClick = {this.btnEditClick} className={"btn edit" + (this.props.btnsEditDisable || this.props.idBtnEditDisable == this.props.product.id ? "" : " active")}>Edit</div>
         </div>
         )
     }

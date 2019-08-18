@@ -28,7 +28,7 @@
     color: #fff;
     cursor: not-allowed;
     user-select: none;
-    transition: box-shadow .1s linear;
+    transition: box-shadow .1s linear, background-color .2s linear;
 }
 .product .btn.active:active {
     box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.3);
