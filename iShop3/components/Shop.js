@@ -25,6 +25,14 @@ class Shop extends React.Component {
             }
         );
     }
+    btnsEnable = () => {
+        this.setState(
+            {
+                idBtnDeleteDisable: null,
+                idBtnEditDisable: null
+            }
+        ); 
+    }
     unHighlight = () => {
         this.setState( 
             {
@@ -65,6 +73,7 @@ class Shop extends React.Component {
             cardProduct: product,
             cardView: "LOOK"
         });
+        this.btnsEnable();
     }
     cbEditProduct = (id, product) => {
         this.setState({
