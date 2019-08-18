@@ -5,8 +5,8 @@ import './Product.css';
 class Product extends React.Component {
     static propTypes = {
         product: PropTypes.object,
-        btnDeleteEnable: PropTypes.bool,
-        btnEditEnable: PropTypes.bool,
+        idBtnDeleteDisable: PropTypes.number,
+        idBtnEditDisable: PropTypes.number,
         cbDeleteProduct: PropTypes.func,
         cbHighlightProductId: PropTypes.func,
         highlight: PropTypes.bool,
@@ -31,8 +31,8 @@ class Product extends React.Component {
             <span className="id">{this.props.product.id}</span>
             <span className="name">{this.props.product.name}</span>
             <span className="price">{this.props.product.price}</span>
-            <div onClick = {this.btnDeleteClick} className={"btn delete" + (this.props.btnDeleteEnable ? " active" : "")}>Delete</div>
-            <div onClick = {this.btnEditClick} className={"btn edit" + (this.props.btnEditEnable ? " active" : "")}>Edit</div>
+            <div onClick = {this.btnDeleteClick} className={"btn delete" + (this.props.idBtnDeleteDisable != this.props.product.id  ? " active" : "")}>Delete</div>
+            <div onClick = {this.btnEditClick} className={"btn edit" + (this.props.idBtnEditDisable != this.props.product.id ? " active" : "")}>Edit</div>
         </div>
         )
     }

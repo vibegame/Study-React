@@ -8,8 +8,8 @@ class Shop extends React.Component {
         goods: PropTypes.array
     }
     state = {
-        btnDeleteEnable: true,
-        btnEditEnable: true,
+        idBtnDeleteDisable: null,
+        idBtnEditDisable: null,
         goods: this.props.goods,
         highlightedProductId: undefined,
         cardProduct: undefined,
@@ -17,7 +17,9 @@ class Shop extends React.Component {
     }
     closeCard = () => {
         this.setState(
-            {            
+            {
+                idBtnDeleteDisable: null,
+                idBtnEditDisable: null,          
                 cardProduct: undefined,
                 cardView: undefined
             }
@@ -29,6 +31,16 @@ class Shop extends React.Component {
                 highlightedProductId: undefined
             }
         );
+    }
+    cbBtnEditDisable = (id) => {
+        this.setState({
+            idBtnEditDisable: id 
+        })
+    }
+    cbBtnDeleteDisable = (id) => {
+        this.setState({
+            idBtnDeleteDisable: id
+        })
     }
     cbDeleteProduct = (product) => {
         let newGoods = [];
@@ -61,6 +73,7 @@ class Shop extends React.Component {
             cardView: "EDIT"
         });
         this.unHighlight();
+        this.cbBtnEditDisable(id);
     }
     cbSaveProduct = (id, product) => {
         let newGoods = [],
@@ -115,8 +128,8 @@ class Shop extends React.Component {
             (<Product 
             key={product.id} 
             product={product} 
-            btnDeleteEnable = {this.state.btnDeleteEnable} 
-            btnEditEnable = {this.state.btnEditEnable}
+            idBtnDeleteDisable= {this.state.idBtnDeleteDisable} 
+            idBtnEditDisable = {this.state.idBtnEditDisable}
             cbDeleteProduct = {this.cbDeleteProduct}
             cbHighlightProductId = {this.cbHighlightProductId}
             highlight = {this.state.highlightedProductId == product.id}
@@ -145,6 +158,8 @@ class Shop extends React.Component {
                 key = {this.state.cardProduct.id}
                 cbSaveProduct = {this.cbSaveProduct}
                 cbCancel = {this.closeCard}
+                cbBtnEditDisable = {this.cbBtnEditDisable}
+                cbBtnDeleteDisable = {this.cbBtnDeleteDisable}
                 /> : <div className="btn add" onClick={this.addProduct}>+</div>}
             </div>
         );

@@ -6,7 +6,9 @@ class Card extends React.Component {
         view: PropTypes.string,
         product: PropTypes.object,
         cbSaveProduct: PropTypes.func,
-        cbCancel: PropTypes.func
+        cbCancel: PropTypes.func,
+        cbBtnEditDisable: PropTypes.func,
+        cbBtnDeleteDisable: PropTypes.func
     }
     static defaultProps = {
         product: {}
@@ -29,6 +31,8 @@ class Card extends React.Component {
         element.className = `message ${message}`;
     }
     validateName = (event) => {
+        this.props.cbBtnDeleteDisable(this.props.product.id);
+        this.props.cbBtnEditDisable(this.props.product.id);
         this.setState({currentName: event.target.value});
         let value = event.target.value;
         let message = this.refs["message-name"];
@@ -56,6 +60,8 @@ class Card extends React.Component {
     }
 
     validatePrice = (event) => {
+        this.props.cbBtnDeleteDisable(this.props.product.id);
+        this.props.cbBtnEditDisable(this.props.product.id);
         this.setState({currentPrice: event.target.value});
         let value = event.target.value;
         let message = this.refs["message-price"];
