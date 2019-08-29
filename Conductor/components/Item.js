@@ -12,6 +12,7 @@ class Item extends React.Component {
     name: this.props.tree.name,
     type: this.props.tree.type,
     render: false,
+    treeName: this.props.treeName
   }
   doRender = (EO) => {
     if(this.state.type == "FOLDER")
@@ -25,9 +26,11 @@ class Item extends React.Component {
   renderTree = () => {
     let tree = this.state.tree.children.slice();
     let treeDOM = [];
+    let i = 1;
     tree.forEach(element => {
-        let elementDOM = <Item cbSetCurrentItem={this.props.cbSetCurrentItem} key={element.id} tree={element}></Item>;
+        let elementDOM = <Item treeName={`${this.props.treeName}-${i}`} cbSetCurrentItem={this.props.cbSetCurrentItem} key={`${this.props.treeName}-${i}`} tree={element}></Item>;
         treeDOM.push(elementDOM);
+        i++;
     });
     return treeDOM;
   }

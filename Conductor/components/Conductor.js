@@ -20,9 +20,11 @@ class Conductor extends React.Component {
     renderTree = () => {
         let tree = this.state.currentTree.slice();
         let treeDOM = [];
+        let i = 1;
         tree.forEach(element => {
-            let elementDOM = <Item cbSetCurrentItem={this.setCurrentItem} key={element.id} tree={element}></Item>;
+            let elementDOM = <Item treeName={i} cbSetCurrentItem={this.setCurrentItem} key={element.id} tree={element}></Item>;
             treeDOM.push(elementDOM);
+            i++;
         });
         return treeDOM;
     }
