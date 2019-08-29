@@ -1,0 +1,10 @@
+.Card {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Card span {
+    font-size: 13px;
+}

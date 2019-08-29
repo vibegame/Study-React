@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    font-family: "Montserrat", "Tahoma", sans-serif;
+    font-size: 25px;
+}
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+li {
+    user-select: none;
+    cursor: pointer;
+    list-style: none;
+    margin-left: 15px;
+}

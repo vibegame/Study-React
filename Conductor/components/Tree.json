@@ -1,0 +1,85 @@
+[
+    {
+        "name": "Моя папка",
+        "type": "FOLDER",
+        "id": 1,
+        "children": [
+            {
+                "name": "app",
+                "type": "JS",
+                "id": 11
+            },
+            {
+                "name": "setup",
+                "type": "EXE",
+                "id": 12
+            },
+            {
+                "name": "Сюда не заходить!",
+                "type": "FOLDER",
+                "id": 13,
+                "children": [
+                    {
+                        "name": "База",
+                        "type": "RUBY",
+                        "id": 131
+                    },
+                    {
+                        "name": "Удаление сервера",
+                        "type": "BAT",
+                        "id": 132
+                    },
+                    {
+                        "name": "Удаление сервера",
+                        "type": "FOLDER",
+                        "id": 133,
+                        "children": [
+                            {
+                                "name": "Hello",
+                                "type": "CSS",
+                                "id": 1321
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "style",
+        "type": "CSS",
+        "id": 2
+    },
+    {
+        "name": "style",
+        "type": "SASS",
+        "id": 3
+    },
+    {
+        "name": "Component",
+        "type": "REACT",
+        "id": 4
+    },
+    {
+        "name": "Components",
+        "type": "FOLDER",
+        "id": 5,
+        "children": [
+            {
+                "name": "App",
+                "type": "REACT",
+                "id": 51
+            },
+            {
+                "name": "App",
+                "type": "CSS",
+                "id": 52
+            },
+            {
+                "name": "info",
+                "type": "JS",
+                "id": 53
+            }
+        ]
+    }
+]
