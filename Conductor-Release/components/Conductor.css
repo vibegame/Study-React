@@ -1,0 +1,24 @@
+.Conductor {
+    width: 500px;
+    border: 20px solid #FFE8D0;
+}
+.Conductor ul li span{
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    padding-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .1s;
+}
+.Conductor ul li {
+    width: 100%;
+    padding: 0 20px;
+}
+.Conductor ul li span.folder {
+    background-color: #FFEF83;
+}
+.Conductor ul li span:hover {
+    background: #2CAFFF;
+    color: #fff;
+}

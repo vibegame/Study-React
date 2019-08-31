@@ -11,9 +11,3 @@ body {
     align-items: center;
     height: 100vh;
 }
-li {
-    user-select: none;
-    cursor: pointer;
-    list-style: none;
-    margin-left: 20px;
-}

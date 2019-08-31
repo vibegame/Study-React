@@ -12,7 +12,7 @@
                 "type": "EXE"
             },
             {
-                "name": "Сюда не заходить!",
+                "name": "Папка #1",
                 "type": "FOLDER",
                 "children": [
                     {
@@ -30,6 +30,30 @@
                             {
                                 "name": "Hello",
                                 "type": "CSS"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Папка #2",
+                "type": "FOLDER",
+                "children": [
+                    {
+                        "name": "База удаленных игроков",
+                        "type": "RUBY"
+                    },
+                    {
+                        "name": "Компонент сервера",
+                        "type": "BAT"
+                    },
+                    {
+                        "name": "Файлы сервера",
+                        "type": "FOLDER",
+                        "children": [
+                            {
+                                "name": "fix",
+                                "type": "bat"
                             }
                         ]
                     }
@@ -64,6 +88,28 @@
             {
                 "name": "info",
                 "type": "JS"
+            }
+        ]
+    },
+    {
+        "name": "App",
+        "type": "JS" 
+    },
+    {
+        "name": "Папка с рецептами",
+        "type": "FOLDER",
+        "children": [
+            {
+                "name": "App",
+                "type": "JS"
+            },
+            {
+                "name": "App",
+                "type": "CSS"
+            },
+            {
+                "name": "info",
+                "type": "JSON"
             }
         ]
     }

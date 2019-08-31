@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Item.css';
-class Item extends React.Component {
+class Item extends React.PureComponent {
   static propTypes = {
     tree: PropTypes.object,
     cbSetCurrentItem: PropTypes.func
@@ -11,8 +11,8 @@ class Item extends React.Component {
     id: this.props.tree.id,
     name: this.props.tree.name,
     type: this.props.tree.type,
+    treeName: this.props.treeName,
     render: false,
-    treeName: this.props.treeName
   }
   doRender = (EO) => {
     if(this.state.type == "FOLDER")
