@@ -1,8 +1,0 @@
-.Conductor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 400px;
-    background: #fff;
-    border: 5px solid #ededed;
-}
