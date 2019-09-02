@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Nikita",
+        "surname": "Tolstik",
+        "age": 18,
+        "balance": 230,
+        "company": "mts",
+        "id": 1
+    },
+    {
+        "name": "Ivan",
+        "surname": "Ivanov",
+        "age": 25,
+        "balance": 130,
+        "company": "mts",
+        "id": 2
+    },
+    {
+        "name": "Elena",
+        "surname": "Darnova",
+        "age": 29,
+        "balance": 10,
+        "company": "a1",
+        "id": 3
+    },
+    {
+        "name": "Debre",
+        "surname": "Al Gonte",
+        "age": 48,
+        "balance": -230,
+        "company": "a1",
+        "id": 4
+    },
+    {
+        "name": "Jordan",
+        "surname": "Heilsi",
+        "age": 68,
+        "balance": -15,
+        "company": "mts",
+        "id": 5
+    }
+]

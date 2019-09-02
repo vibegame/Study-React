@@ -1,0 +1,18 @@
+.Names {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+.Names span{
+    flex: 1;
+    color: #666;
+    font-weight: bold;
+    font-size: 17px;
+    border-bottom: 1px solid #B7C2C7;
+    text-align: center;
+    padding-bottom: 10px;
+    box-shadow: 0px 10px 15px -13px rgba(0,0,0,0.6);
+}
+.Names span.actions {
+    flex: 2;
+}

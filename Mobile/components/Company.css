@@ -1,0 +1,17 @@
+.Company {
+    display: inline-flex;
+    margin-bottom: 20px;
+}
+.Company .btn {
+    display: flex;
+    width: 70px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+}
+.Company .btn.active {
+    background-color: #1BEB7B;
+}
