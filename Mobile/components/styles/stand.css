@@ -11,15 +11,17 @@ body {
     align-items: center;
     height: 100vh;
 }
+button {
+    border: 0;
+    outline: 0;
+}
 input[type="text"] {
     outline: none;
     border: 0;
 }
 input[type="text"]:focus {
     outline: none;
-    border: 0;
 }
 input[type="text"]:active {
     outline: none;
-    border: 0;
 }

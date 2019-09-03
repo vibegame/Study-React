@@ -1,41 +1,23 @@
 import React, { PureComponent } from 'react'
-import {voteEvents} from './events';
+import {Events} from './events';
 import './Company.css';
 class Company extends PureComponent {
     state = {
-        currentCompany: "mts"
+        currentCompany: 'mts'
     }
-    btnDeleteRef = null;
-    btnEditRef = null;
-    changeCompany = (company) => {
-        voteEvents.emit("changeCompany", company);
-    }
-    selectMTS = (EO) => {
-        if(this.state.currentCompany != "mts")
-        {
-            this.setState({
-                currentCompany: "mts"
-            });
-            this.changeCompany("mts");
-        } 
-        return;
-    }
-    selectA1 = (EO) => {
-        if(this.state.currentCompany != "a1")
-        {
-            this.setState({
-                currentCompany: "a1"
-            });
-            this.changeCompany("a1");
-        } 
-        return;
+    setCompany = (EO) => {
+        let company = EO.currentTarget.getAttribute("data-click");
+        this.setState({
+            currentCompany: company
+        });
+        Events.emit("setCompany", company);
     }
     render() {
         console.log(`Render Company`);
         return (
             <div className="Company">
-                <button className={`btn c-mts ${(this.state.currentCompany == 'mts') ? 'active' : ''}`} onClick={this.selectMTS}>MTS</button>
-                <button className={`btn c-velcom ${(this.state.currentCompany == 'a1') ? 'active' : ''}`} onClick={this.selectA1}>A1</button>
+                <button data-click="mts" className={`btn ${this.state.currentCompany == 'mts' ? 'enable' : ''}`} onClick={this.setCompany}>MTS</button>
+                <button data-click="a1" className={`btn ${this.state.currentCompany == 'a1' ? 'enable' : ''}`} onClick={this.setCompany}>A1</button>
             </div>
         )
     }

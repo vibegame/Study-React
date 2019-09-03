@@ -14,14 +14,14 @@
 }
 .Client span.actions {
     display: flex;
-    justify-content: space-around;
     flex: 2;
+    justify-content: flex-end;
 }
 .Client span.actions .btn {
-    padding: 13px 35px;
+    padding: 13px 25px;
     outline: 0;
     border: 0;
-    font-size: 15px;
+    font-size: 13px;
     font-family: Montserrat;
     cursor: pointer;
     
@@ -29,6 +29,7 @@
 .Client span.actions .btn.delete {
     background-color: #EB3021;
     color: #fff;
+    margin-right: 30px;
 }
 .Client span.actions .btn.edit {
     background-color: #3D70FF;
@@ -37,11 +38,11 @@
 .Client span.actions .btn:active {
     box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.5);
 }
-.Client span.status{
+.Client span.state{
     background: #00EB25;
     padding: 13px 0;
 }
-.Client span.status.blocked {
+.Client span.state.blocked {
     background: #F02952;
     color: #fff;
 }

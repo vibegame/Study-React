@@ -1,12 +1,10 @@
-.Company {
-    margin-bottom: 20px;
-}
-.Company .btn {
+.ButtonsSorting .btn{
     padding: 10px 25px;
     font-family: Montserrat;
     cursor: pointer;
     background-color: #C9C9D1;
 }
-.Company .btn.enable {
-    background-color: #1BEB7B;
+.ButtonsSorting .btn.enable {
+    background-color: #A665FF;
+    color: #fff;
 }
