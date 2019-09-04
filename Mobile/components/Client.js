@@ -16,7 +16,7 @@ class Client extends PureComponent {
         Events.emit("editClient", this.props.client);
     }
     render() {
-        console.log(`Render Client ID: ${this.props.client.name}`);
+        console.log(`Render Client Name: ${this.props.client.name}`);
         return (
             <div className="Client">
                 <span>{this.props.client.name}</span>

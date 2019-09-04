@@ -162,6 +162,7 @@ class Card extends PureComponent {
         for(let key in this._inputRefs) {
             client[key] = this._inputRefs[key].value;
         }
+        client['company'] = client['company'].toLowerCase();
         Events.emit("addClient", client);
         Events.emit("closeCard");        
     }
