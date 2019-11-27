@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+}
+.trigger {
+    width: 200px;
+    height: 60px;
+}
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+}
+.menu .buttons {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #333;
+}

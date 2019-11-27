@@ -8,6 +8,9 @@ import Card from './Card';
 import ButtonsSorting from './ButtonsSorting';
 import './Mobile.css';
 class Mobile extends PureComponent {
+    constructor(props) {
+        super(props);
+    }
     static propTypes = {
         clients: PropTypes.array
     }
@@ -124,7 +127,6 @@ class Mobile extends PureComponent {
         Events.addListener('closeCard',this.closeCard);
         Events.addListener('addClient',this.addClient);
     };
-    
     componentWillUnmount = () => {
         Events.removeListener('setCompany',this.setCompany);
         Events.removeListener('setSorting',this.setSorting);

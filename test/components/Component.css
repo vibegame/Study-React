@@ -1,0 +1,20 @@
+.dropdown {
+    position: relative;
+    width: 100px;
+    cursor: pointer;
+}
+
+.DropMenu.active {
+    display: block;
+}
+.DropMenu {
+    position: absolute;
+    display: none;
+    bottom: -100px;
+    right: -20px;
+}
+.dropItem {
+    padding: 10px 15px;
+    background: #f6f6f6;
+    border: 1px solid #333;
+}

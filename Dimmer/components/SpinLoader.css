@@ -1,0 +1,39 @@
+
+* {margin: 0; padding: 0;}
+html, body { height: 100%; }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ededed;
+}
+.SpinLoader {
+    position: relative;
+    width: 800px;
+    height: 200px;
+}
+.Dimmer {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.Dimmer.active {
+    display: block;
+}
+.Dimmer
+.Spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.spinner-active {
+    stroke: #fff;
+    animation: rotateLoader .6s linear infinite;
+    transform-origin: center;
+}
+
