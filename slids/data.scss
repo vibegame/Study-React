@@ -1,0 +1,28 @@
+.congratulations {
+  font-weight: bold;
+  font-size: 36px;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.4;
+
+  .goNext {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+    animation: goNext 3s ease infinite;
+  }
+}
+
+@keyframes goNext {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
