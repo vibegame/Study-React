@@ -1,0 +1,165 @@
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #f35626, #feab3a);
+  animation: hue 120s linear infinite;
+}
+
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateX(100%);
+
+  transition: transform .3s ease-in-out;
+
+  &[data-state="shown"] {
+    transform: translateX(-100%);
+  }
+
+  &[data-state="active"] {
+    transform: translateX(0);
+  }
+
+  &[data-state="not-shown"] {
+    transform: translateX(100%);
+  }
+
+
+  .content {
+    color: #ffffff;
+    font-size: 14px;
+    width: 500px;
+
+    .company {
+      display: block;
+      margin-bottom: 15px;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .owner {
+      display: block;
+      text-align: left;
+      text-transform: uppercase;
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    .description {
+      display: block;
+      padding: 15px 0;
+      line-height: 1.4;
+      font-size: 16px;
+      border-bottom: solid 1px #ffffff;
+    }
+
+  }
+}
+
+.sliderToggler {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+
+  transition: background .2s linear;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  &:hover .togglerContent {
+    opacity: 1;
+  }
+}
+
+.rightSide {
+  right: 0;
+}
+
+.leftSide {
+  left: 0;
+}
+
+.togglerContent {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity .2s linear;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.errorMessage {
+  padding: 10px 20px;
+  background: red;
+  z-index: 321321;
+  color: #ffffff;
+  position: fixed;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  animation: show .3s ease forwards;
+}
+
+.skip {
+  position: fixed;
+  left: 50%;
+  bottom: 50px;
+
+  transform: translateX(-50%);
+
+  padding: 10px 20px;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+  transition: background .3s ease;
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg)
+  }
+  100% {
+    filter: hue-rotate(360deg)
+  }
+}
+
+@keyframes show {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
